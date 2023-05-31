@@ -1,0 +1,36 @@
+﻿@using RunGroopWebApp.Models
+@model List<Empleado>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@*
+@{
+    Layout = "LayoutEjemplo"; // Acá especificas cuál layout quieres utilizar
+    Layout = null; // Acá especificas que no quieres utilizar ningún layout
+}
+*@
+
+<div class="text-center">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <td>Nombre</td>
+                <td>Apellido</td>
+                <td>Fecha de nacimiento</td>
+                <td>Dirección</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var empleado in Model)
+            {
+                <tr>
+                    <td>@empleado.NombreEmpleado</td>
+                    <td>@empleado.ApellidoEmpleado</td>
+                    <td>@empleado.FechaNacEmpleado</td>
+                    <td>@empleado.DireccionEmpleado</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
