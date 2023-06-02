@@ -32,7 +32,7 @@ namespace RunGroopWebApp.Controllers
             Si te preguntas cómo es que "View" sabe a cual plantilla renderizar,
             Solo tienes que revisar en la carpeta "Views" y aparecerán carpetas con el nombre de los controladores (Exceptuando 'Shared')
             además de que por ejemplo, fijese que el nombre de la carpeta "Home" que tiene el mismo nombre que el controlador, 
-            (Solamente quita la palabra 'Controler' del final) y ejecutará la plantilla que se llame "index.cshtml"
+            (Solamente quita la palabra 'Controller' del final) y ejecutará la plantilla que se llame "index.cshtml"
              */
         }
 

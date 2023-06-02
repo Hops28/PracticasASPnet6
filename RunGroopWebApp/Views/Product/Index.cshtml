@@ -1,0 +1,57 @@
+﻿@model List<Producto>
+
+@{
+}
+
+<div class="ContenidoProductos">
+    <div class="Encabezado">
+        <h3>Productos</h3>
+    </div>
+
+    <!-- Boton para crear producto -->
+    <div class="seccionCrear">
+        <button class="btn btn-primary">
+            <i class="fa-sharp fa-solid fa-plus"></i>
+            <a asp-controller="Product" asp-action="Crear" class="text-decoration-none text-light"> Crear producto</a>
+        </button>
+    </div>
+
+    <!-- Tabla que muestra los productos -->
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <td>Nombre de producto</td>
+                <td>Precio</td>
+                <td>Descripcion</td>
+                <td>Acciones</td>
+
+            </tr>
+        </thead>
+
+        <!-- Contenido de la tabla -->
+        <tbody>
+            @foreach (var product in Model)
+            {
+                <tr>
+                    <td>@product.NombreProducto</td>
+                    <td>@product.Precio</td>
+                    <td>@product.Descripcion</td>
+
+                    <!-- ACCIONES -->
+                    <td>
+                        <!-- Botón para editar el producto -->
+                        <button class="BotonEditar btn btn-secondary">
+                            <i class="fa-solid fa-pen text-light"></i> Editar
+                        </button>
+
+                        <!-- Botón para eliminar el producto -->
+                        <button class="BotonEliminar btn btn-danger">
+                            <i class="fa-solid fa-trash"></i>
+                            <a asp-controller="Product" asp-action="Eliminar" asp-route-id="@product.IdProducto" class="text-decoration-none text-light"> Eliminar</a>
+                        </button>
+                    </td>
+                </tr>
+            } <!-- Fin for -->
+        </tbody>
+    </table>
+</div>

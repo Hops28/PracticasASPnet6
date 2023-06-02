@@ -1,0 +1,55 @@
+﻿@using RunGroopWebApp.Models.ViewModels
+@model ProductViewModel
+
+@{
+}
+
+<div class="contenido row d-flex .flex-column justify-content-center">
+    <!-- Titulo -->
+    <div class="encabezado col-6">
+        <h3 class="text-center">Crear un producto</h3>
+    </div>
+
+    <!-- Cuerpo -->
+    <div class="cuerpo row d-flex .flex-column justify-content-center">
+        <!-- Contenedor del formulario -->
+        <div class="col-6">
+            <!-- Formulario -->
+            <form asp-action="Crear">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <!-- Nombre de producto -->
+                <div class="form-group">
+                    <label asp-for="NombreProducto" class="control-label"></label>
+                    <input asp-for="NombreProducto" class="form-control"/>
+                    <span asp-validation-for="NombreProducto" class="text-danger"></span>
+                </div>
+
+                <!-- Precio de producto -->
+                <div class="form-group">
+                    <label asp-for="PrecioProducto" class="control-label"></label>
+                    <input asp-for="PrecioProducto" class="form-control" type="number"/>
+                    <span asp-validation-for="PrecioProducto" class="text-danger"></span>
+                </div>
+
+                <!-- Descripcion de producto -->
+                <div class="form-group">
+                    <label asp-for="DescripcionProducto" class="control-label"></label>
+                    <input asp-for="DescripcionProducto" class="form-control" />
+                    <span asp-validation-for="DescripcionProducto" class="text-danger"></span>
+                </div>
+
+                <!-- Crear producto [POST] -->
+                <div class="form-group">
+                    <input type="submit" value="Crear" class="btn btn-primary mt-3"/>
+                </div>
+            </form> <!-- Cierre de formulario -->
+        </div> <!-- Cierre de contenedor -->
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        Html.RenderPartial("_ValidationScriptsPartial");
+    }
+}
